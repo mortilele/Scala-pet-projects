@@ -1,12 +1,13 @@
 package week5.leetcode
 
+
 import scala.math.min
 object MinimumDistanceBetweenBSTNodes {
-//   Definition for a binary tree node.
+  //   Definition for a binary tree node.
   class TreeNode(_value: Int = 0, _left: TreeNode = null, _right: TreeNode = null) {
-      var value: Int = _value
-      var left: TreeNode = _left
-      var right: TreeNode = _right
+    var value: Int = _value
+    var left: TreeNode = _left
+    var right: TreeNode = _right
   }
   def minDiffInBST(root: TreeNode): Int = {
     var last = -1
@@ -24,3 +25,25 @@ object MinimumDistanceBetweenBSTNodes {
     mini
   }
 }
+
+
+//object MinimumDistanceBetweenBSTNodes {
+//  //   Definition for a binary tree node.
+//  class TreeNode(_value: Int = 0, _left: TreeNode = null, _right: TreeNode = null) {
+//    var value: Int = _value
+//    var left: TreeNode = _left
+//    var right: TreeNode = _right
+//  }
+//  def minDiffInBST(root: TreeNode): Int = {
+//    def inOrder(node: TreeNode, last: Int, mini: Int) = {
+//      node match {
+//        case Some(_) => {
+//
+//        }
+//        case None => 0
+//      }
+//    }
+//    inOrder(root, 0, Int.MaxValue)
+//  }
+//}
+

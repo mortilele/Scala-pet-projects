@@ -11,3 +11,6 @@ libraryDependencies ++= Seq(
   "io.circe" %% "circe-generic",
   "io.circe" %% "circe-parser"
 ).map(_ % circeVersion)
+
+val AkkaVersion = "2.6.10"
+libraryDependencies += "com.typesafe.akka" %% "akka-actor-typed" % AkkaVersion
