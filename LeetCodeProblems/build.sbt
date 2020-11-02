@@ -13,4 +13,14 @@ libraryDependencies ++= Seq(
 ).map(_ % circeVersion)
 
 val AkkaVersion = "2.6.10"
-libraryDependencies += "com.typesafe.akka" %% "akka-actor-typed" % AkkaVersion
+val AkkaHttpVersion = "10.2.1"
+
+
+libraryDependencies ++= Seq(
+  "com.typesafe.akka" %% "akka-stream" % AkkaVersion,
+  "com.typesafe.akka" %% "akka-http" % AkkaHttpVersion,
+  "com.typesafe.akka" %% "akka-actor-typed" % AkkaVersion,
+  "com.typesafe.akka" %% "akka-http-spray-json" % AkkaHttpVersion,
+  "de.heikoseeberger" %% "akka-http-circe" % "1.31.0",
+  "ch.qos.logback" % "logback-classic" % "1.2.3",
+)
