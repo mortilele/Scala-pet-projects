@@ -25,8 +25,8 @@ object HttpServerSample {
       val addressBookRepository = new InMemoryAddressBookRepository(contacts)(context.executionContext)
       val router = new MyRouter(addressBookRepository)(context.system, context.executionContext)
 
-      val host = "localhost"
-      val port = Try(System.getenv("PORT")).map(_.toInt).getOrElse(8080)
+      val host = "0.0.0.0"
+      val port = Try(System.getenv("PORT")).map(_.toInt).getOrElse(9000)
 
       Server.startHttpServer(router.route, host, port)(context.system, context.executionContext)
       Behaviors.empty

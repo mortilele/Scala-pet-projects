@@ -2,7 +2,7 @@ package week3.LeetCode
 
 import scala.collection.mutable.ArrayBuffer
 
-object FindPositiveIntegerSolutionForGivenSequence extends App {
+class FindPositiveIntegerSolutionForGivenSequence extends App {
 
   class CustomFunction {
     // Returns f(x, y) for any given positive integers x and y.

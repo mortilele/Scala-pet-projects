@@ -1,10 +1,7 @@
 package week8.PingPong
 
 import akka.actor.typed.ActorSystem
-import akka.actor.typed.scaladsl.Behaviors
 import akka.http.scaladsl.Http
-import akka.http.scaladsl.model._
-import akka.http.scaladsl.server.Directives._
 import akka.http.scaladsl.server.Route
 import org.slf4j.{Logger, LoggerFactory}
 
@@ -27,22 +24,22 @@ object HTTPServerRouting {
         system.terminate()
     }
   }
-
-  def main(args: Array[String]): Unit = {
-
-    val route = {
-      path("ping") {
-        get {
-          complete(HttpEntity(ContentTypes.`text/html(UTF-8)`, "pong"))
-        }
-      }
-    }
-
-    val rootBehavior = Behaviors.setup[Nothing] { context =>
-      startHttpServer(route)(context.system)
-      Behaviors.empty
-    }
-
-    val system = ActorSystem[Nothing](rootBehavior, "PingPongHttpServer")
-  }
+//
+//  def main(args: Array[String]): Unit = {
+//
+//    val route = {
+//      path("ping") {
+//        get {
+//          complete(HttpEntity(ContentTypes.`text/html(UTF-8)`, "pong"))
+//        }
+//      }
+//    }
+//
+//    val rootBehavior = Behaviors.setup[Nothing] { context =>
+//      startHttpServer(route)(context.system)
+//      Behaviors.empty
+//    }
+//
+//    val system = ActorSystem[Nothing](rootBehavior, "PingPongHttpServer")
+//  }
 }

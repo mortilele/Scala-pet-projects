@@ -1,6 +1,6 @@
 package week3.LeetCode
 
-object NRepeatedElementInSize2NArray extends App {
+class NRepeatedElementInSize2NArray extends App {
   def repeatedNTimes(A: Array[Int]): Int = {
     val hashMap = A.groupBy(identity).mapValues(_.length)
     var ans: Int = 0

@@ -1,8 +1,8 @@
 package week6.akka_example
 
 import akka.NotUsed
-import akka.actor.typed.{ActorSystem, Behavior, Terminated}
 import akka.actor.typed.scaladsl.Behaviors
+import akka.actor.typed.{Behavior, Terminated}
 
 object Main {
   def apply(): Behavior[NotUsed] =
@@ -18,8 +18,8 @@ object Main {
       }
     }
 
-  def main(args: Array[String]): Unit = {
-    ActorSystem(Main(), "ChatRoomDemo")
-  }
+//  def main(args: Array[String]): Unit = {
+//    ActorSystem(Main(), "ChatRoomDemo")
+//  }
 
 }

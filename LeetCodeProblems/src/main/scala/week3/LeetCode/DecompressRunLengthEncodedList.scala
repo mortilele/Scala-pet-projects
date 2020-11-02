@@ -1,6 +1,6 @@
 package week3.LeetCode
 
-object DecompressRunLengthEncodedList extends App {
+class DecompressRunLengthEncodedList extends App {
   def decompressRLElist(nums: Array[Int]): Array[Int] = {
     var res = Array[Int]()
     for (i <- nums.indices by 2)

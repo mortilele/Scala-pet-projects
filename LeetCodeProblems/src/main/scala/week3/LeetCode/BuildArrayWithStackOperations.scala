@@ -2,7 +2,7 @@ package week3.LeetCode
 
 import scala.collection.mutable.ArrayBuffer
 
-object BuildArrayWithStackOperations extends App {
+class BuildArrayWithStackOperations extends App {
   def buildArray(target: Array[Int], n: Int): List[String] = {
     var ans = ArrayBuffer[String]()
 

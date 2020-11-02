@@ -2,7 +2,7 @@ package week3.LeetCode
 
 import scala.collection.mutable.ArrayBuffer
 
-object FindNUniqueIntegersSumUpToZero {
+class FindNUniqueIntegersSumUpToZero {
   def sumZero(n: Int): Array[Int] = {
     val total = ((n - 1) * n) / 2
     val ans = ArrayBuffer.fill[Int](n)(0)

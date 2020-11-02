@@ -1,10 +1,7 @@
 package week3
 
-import scala.annotation.tailrec
+class FindIsElementInListRecursively extends App {
 
-object FindIsElementInListRecursively extends App {
-
-  @tailrec
   def isElementInList(list: List[Int], x: Int): Boolean = {
     list match {
       case Nil => false

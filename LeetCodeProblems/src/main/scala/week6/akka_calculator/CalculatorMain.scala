@@ -1,7 +1,7 @@
 package week6.akka_calculator
 
+import akka.actor.typed.Behavior
 import akka.actor.typed.scaladsl.Behaviors
-import akka.actor.typed.{ActorSystem, Behavior}
 
 object CalculatorMain {
 
@@ -17,9 +17,9 @@ object CalculatorMain {
       }
     }
 
-  def main(args: Array[String]): Unit = {
-    val system: ActorSystem[ReadExpression] = ActorSystem(CalculatorMain(), "calculatorDemo")
-    system ! ReadExpression("2+5*3")
-    system ! ReadExpression("18-2*4+3*2-5")
-  }
+//  def main(args: Array[String]): Unit = {
+//    val system: ActorSystem[ReadExpression] = ActorSystem(CalculatorMain(), "calculatorDemo")
+//    system ! ReadExpression("2+5*3")
+//    system ! ReadExpression("18-2*4+3*2-5")
+//  }
 }

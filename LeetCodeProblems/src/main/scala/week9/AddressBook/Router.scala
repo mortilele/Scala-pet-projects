@@ -16,9 +16,10 @@ class MyRouter(val addressBookRepository: InMemoryAddressBookRepository)
               (implicit system: ActorSystem[_],  ex:ExecutionContext) extends Router
   with Directives
   with ContactDirectives
+  with ValidatorDirectives
   with HealthCheckRoute {
 
-  def addressBook = {
+  def addressBook: Route = {
     pathPrefix("contacts") {
       concat(
         pathEndOrSingleSlash {
@@ -39,8 +40,10 @@ class MyRouter(val addressBookRepository: InMemoryAddressBookRepository)
           "-[a-f0-9]{4}-[a-f0-9]{12}").r) { id =>
           concat(
             get {
-              handleWithGeneric(addressBookRepository.retrieve(id)) { result =>
-                complete(result)
+              validateExistenceWith(ContactExistenceValidator, addressBookRepository)(id) {
+                handleWithGeneric(addressBookRepository.retrieve(id)) { result =>
+                  complete(result)
+                }
               }
             },
             patch {

@@ -5,7 +5,7 @@ import week5.sis5.models.Invoice
 import week5.sis5.parsers.{InvoiceParser, SaleParser}
 import week5.sis5.utils.FileUtils
 
-object Main extends App {
+class Main extends App {
 
   val fileName = "raw.txt"
   val fileContent = FileUtils.readFile(fileName)

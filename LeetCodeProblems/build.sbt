@@ -1,8 +1,15 @@
+import com.typesafe.sbt.packager.docker.ExecCmd
+
+enablePlugins(JavaAppPackaging, AshScriptPlugin)
+
 name := "LeetCodeProblems"
 
 version := "0.1"
 
 scalaVersion := "2.13.3"
+
+dockerBaseImage := "openjdk:8-jre-alpine"
+packageName in Docker := "leetcodeproblems"
 
 val circeVersion = "0.12.3"
 
@@ -24,3 +31,10 @@ libraryDependencies ++= Seq(
   "de.heikoseeberger" %% "akka-http-circe" % "1.31.0",
   "ch.qos.logback" % "logback-classic" % "1.2.3",
 )
+
+dockerCommands := dockerCommands.value.map {
+  case ExecCmd("CMD", _ @ _*) =>
+    ExecCmd("CMD", "/opt/docker/bin/leetcodeproblems")
+  case other =>
+    other
+}
