@@ -46,6 +46,9 @@ coverage.xml
 docs/_build/
 # PyBuilder
 target
+*.iml
+target/*
+*.bsp
 
 # Database
 api/db.sqlite3
@@ -57,6 +60,7 @@ api/db.sqlite3
 media/
 # django/media
 .idea/
+.bsp/
 db.sqlite3
 celerybeat-schedule.db
 celerybeat-schedule
