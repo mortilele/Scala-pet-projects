@@ -78,3 +78,4 @@ configs/letsencrypt
 # apidoc generated files
 templates/apidoc
 apidoc.json
+Scala-Final
